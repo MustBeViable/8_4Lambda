@@ -1,4 +1,4 @@
-import java.util.Comparator;
+package Task1;
 
 public class Person {
     private String name;
