@@ -10,42 +10,21 @@ public class LambdaList {
         for (Integer i : ints) {
             intList.add(i);
         }
-        ArrayList<Integer> intOdd = new ArrayList<>(intList);
-        ArrayList<Integer> intEven = new ArrayList<>(intList);
-        ArrayList<Integer> doubledInts = new ArrayList<>(intList);
-        ArrayList<Integer> sumOfInts = new ArrayList<>(intList);
-
+        ArrayList<Integer> intArrayList = new ArrayList<>(intList);
 
         System.out.println("Alkuperänen lisna: " + intList);
         System.out.println();
 
-        intOdd.removeIf(n -> n % 2 == 0);
-        intOdd.replaceAll(n -> {
-            if (n % 2 != 0) {
-                return n * 2;
-            }
-            return n;
-        } );
-        System.out.println("Parittomat kerrottuna kahdella: " + intOdd);
+        intArrayList.removeIf(n -> n % 2 == 0);
+        System.out.println("Parittomat: " + intArrayList);
         System.out.println();
 
-
-/*
-
- */
-
-
-        intEven.removeIf(n -> n%2 != 0);
-        System.out.println("Parilliset: " + intEven);
+        intArrayList.replaceAll(n -> n*2);
+        System.out.println("Parittomat kerrottuna kahdella: " + intArrayList);
         System.out.println();
-
-
-
-        doubledInts.replaceAll(n -> n*2);
-        System.out.println("Tuplauksen jälkeen: " + doubledInts);
 
         final int[] sumBox = {0};
-        sumOfInts.forEach(n -> sumBox[0] += n);
+        intArrayList.forEach(n -> sumBox[0] += n);
         int sumA = sumBox[0];
         System.out.println("Summa: " + sumA);
         }
